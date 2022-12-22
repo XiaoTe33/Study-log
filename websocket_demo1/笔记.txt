@@ -1,0 +1,9 @@
+websocket实操
+总结：
+1.首先通过一个websocket.Upgrader的Upgrade(w, r, header)方法进行协议升级
+2.程序建立连接实现的是一个双向的交流
+web --->readLoop():{wsConn.ReadMessage()->conn.inChan}  --->conn.ReadMessage() --->后台处理
+                                                                                               
+
+
+web<---writeLoop():{wsConn.WriteMessage()<-conn.outChan} <--- conn.writeMessage()<---后台数据
